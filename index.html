@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cars on Rent | Premium Car Rental Services Across Northeast India</title>
+<meta name="description" content="Cars on Rent offers premium car rental and travel services from Guwahati across Assam and Northeast India. Enquire for comfortable local, outstation and Northeast journeys." />
+<meta name="theme-color" content="#0b2b30" />
+<link rel="canonical" href="/" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Cars on Rent" />
+<meta property="og:title" content="Cars on Rent | Premium Car Rental Services Across Northeast India" />
+<meta property="og:description" content="Premium cars, comfortable journeys and reliable rental services across Assam and the Northeastern states of India." />
+<meta property="og:image" content="images/site/hero.jpg" />
+<meta property="og:url" content="/" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Cars on Rent | Premium Car Rental Services Across Northeast India" />
+<meta name="twitter:description" content="Premium cars, comfortable journeys and reliable rental services across Assam and Northeast India." />
+<meta name="twitter:image" content="images/site/hero.jpg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ============ HEADER / NAV ============ -->
+<header class="nav" id="nav">
+  <div class="container nav__inner">
+    <a class="brand" href="#home" aria-label="Cars on Rent home">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14M3 17l1.8-5.2A3 3 0 0 1 7.6 9.7h8.8a3 3 0 0 1 2.8 2.1L21 17M6.5 17v1.5M17.5 17v1.5"/><circle cx="7.5" cy="14" r="1"/><circle cx="16.5" cy="14" r="1"/></svg>
+      </span>
+      <span class="brand__text">Cars<span>on</span>Rent</span>
+    </a>
+
+    <nav class="nav__links" id="navLinks" aria-label="Main navigation">
+      <a href="#home" class="nav__link is-active">Home</a>
+      <a href="#about" class="nav__link">About</a>
+      <a href="#fleet" class="nav__link">Fleet</a>
+      <a href="#destinations" class="nav__link">Destinations</a>
+      <a href="#gallery" class="nav__link">Gallery</a>
+      <a href="#contact" class="nav__link">Contact</a>
+      <div class="nav__mobile-cta">
+        <a class="btn btn--ghost-dark" href="tel:+917086263505">Call Now</a>
+        <a class="btn btn--primary" href="#contact">Book a Car</a>
+      </div>
+    </nav>
+
+    <div class="nav__actions">
+      <a class="btn btn--ghost js-wa" data-wa-context="navbar" href="#">WhatsApp</a>
+      <a class="btn btn--accent" href="#contact">Book a Car</a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <div class="hero__media">
+    <img src="images/site/hero.jpg" alt="Premium SUV on a scenic mountain highway in Northeast India" width="1920" height="1088" id="heroImg" />
+  </div>
+  <div class="hero__veil"></div>
+
+  <div class="container hero__inner">
+    <div class="hero__copy">
+      <p class="eyebrow reveal">Premium Car Rentals • Northeast India</p>
+      <h1 class="hero__title reveal">Explore Northeast India in Comfort.</h1>
+      <p class="hero__sub reveal">Premium cars, comfortable journeys and reliable rental services across Assam and the Northeastern states of India.</p>
+      <div class="hero__cta reveal">
+        <a class="btn btn--accent btn--lg" href="#contact">Book Your Ride</a>
+        <a class="btn btn--glass btn--lg" href="tel:+917086263505">Call Now</a>
+      </div>
+    </div>
+
+    <!-- Floating quote card -->
+    <aside class="quote-card reveal" aria-label="Quick quote request">
+      <h2 class="quote-card__title">Plan your ride</h2>
+      <p class="quote-card__hint">Get a quick quote on WhatsApp.</p>
+      <form class="quote-form" id="quoteForm" novalidate>
+        <div class="field">
+          <label for="q-pickup">Pickup Location</label>
+          <input id="q-pickup" name="pickup" type="text" placeholder="Guwahati" required />
+        </div>
+        <div class="field">
+          <label for="q-destination">Destination</label>
+          <input id="q-destination" name="destination" type="text" placeholder="Shillong" required />
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="q-date">Travel Date</label>
+            <input id="q-date" name="date" type="date" required />
+          </div>
+          <div class="field">
+            <label for="q-vehicle">Vehicle Type</label>
+            <select id="q-vehicle" name="vehicle" required>
+              <option value="">Select</option>
+              <option>Toyota Innova Crysta</option>
+              <option>Toyota Innova</option>
+              <option>Force Urbania</option>
+              <option>Force Tempo Traveller 17 Seater</option>
+              <option>Force Tempo Traveller 26 Seater</option>
+              <option>Maruti Suzuki Swift Dzire</option>
+              <option>Maruti Suzuki Brezza</option>
+              <option>Maruti Suzuki Fronx</option>
+              <option>Hyundai Venue</option>
+              <option>Hyundai i20</option>
+            </select>
+          </div>
+        </div>
+        <button class="btn btn--accent btn--full" type="submit">Get a Quote on WhatsApp</button>
+        <p class="form-note">Opens WhatsApp with your details pre-filled.</p>
+      </form>
+    </aside>
+  </div>
+</section>
+
+<!-- ============ TRUST ============ -->
+<section class="section section--tight" aria-label="Service highlights">
+  <div class="container">
+    <div class="trust-grid">
+      <article class="trust reveal">
+        <span class="trust__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16h16M5 16l1.5-4.6A3 3 0 0 1 9.4 9.3h5.2a3 3 0 0 1 2.9 2.1L19 16"/><path d="M8 20v-2M16 20v-2"/></svg></span>
+        <h3>Comfort First</h3>
+        <p>Well-maintained vehicles for comfortable journeys.</p>
+      </article>
+      <article class="trust reveal">
+        <span class="trust__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 2.5 15.4 0 18M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg></span>
+        <h3>Northeast Coverage</h3>
+        <p>Travel across Assam and destinations throughout Northeast India.</p>
+      </article>
+      <article class="trust reveal">
+        <span class="trust__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6l7-3Z"/><path d="M9 12l2 2 4-4"/></svg></span>
+        <h3>Reliable Service</h3>
+        <p>Professional and dependable rental support.</p>
+      </article>
+      <article class="trust reveal">
+        <span class="trust__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h10M4 12h16M4 17h10"/><path d="M17 5l3 2-3 2M17 15l3 2-3 2"/></svg></span>
+        <h3>Flexible Travel</h3>
+        <p>Local trips, airport transfers, tours and long-distance journeys.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="section" id="about">
+  <div class="container about">
+    <div class="about__media reveal">
+      <img src="images/site/about.jpg" alt="Sedan parked beside green tea gardens in Assam" width="1200" height="1408" loading="lazy" />
+      <div class="about__chip">
+        <strong>Guwahati</strong>
+        <span>Your starting point</span>
+      </div>
+    </div>
+    <div class="about__body">
+      <p class="eyebrow eyebrow--dark reveal">About Cars on Rent</p>
+      <h2 class="h2 reveal">Your Journey Across Northeast India Starts Here.</h2>
+      <p class="lead reveal">Cars on Rent provides convenient car rental and travel solutions from Guwahati for travellers exploring Assam and the Northeastern states of India — whether it's a short city trip, an airport transfer or a longer scenic tour.</p>
+      <p class="reveal">We focus on comfortable travel, easy booking and journeys planned around where you actually want to go. Families, business travellers and tourists can pick a vehicle that fits the trip, and we help with the rest.</p>
+      <ul class="about__list reveal">
+        <li>Comfortable local &amp; outstation travel</li>
+        <li>Airport pickups and drop-offs</li>
+        <li>Scenic Northeast tour journeys</li>
+        <li>Family, group and business trips</li>
+      </ul>
+      <a class="btn btn--primary btn--lg reveal js-wa" data-wa-context="about" href="#">Plan Your Journey</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FLEET ============ -->
+<section class="section section--soft" id="fleet">
+  <div class="container">
+    <header class="section-head">
+      <p class="eyebrow eyebrow--dark reveal">Our Fleet</p>
+      <h2 class="h2 reveal">Choose Your Ride</h2>
+      <p class="section-head__sub reveal">Comfortable vehicles for every kind of Northeast journey.</p>
+    </header>
+    <div class="fleet-grid" id="fleetGrid"><!-- rendered by js/script.js (FLEET data) --></div>
+  </div>
+</section>
+
+<!-- ============ DESTINATIONS ============ -->
+<section class="section" id="destinations">
+  <div class="container">
+    <header class="section-head">
+      <p class="eyebrow eyebrow--dark reveal">Northeast India</p>
+      <h2 class="h2 reveal">Discover Northeast India</h2>
+      <p class="section-head__sub reveal">From misty hills to lush valleys, make every journey memorable.</p>
+    </header>
+    <div class="dest-grid" id="destGrid"><!-- rendered by js/script.js (DESTINATIONS data) --></div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="section section--soft" id="services">
+  <div class="container">
+    <header class="section-head">
+      <p class="eyebrow eyebrow--dark reveal">Services</p>
+      <h2 class="h2 reveal">Travel, Handled Simply</h2>
+      <p class="section-head__sub reveal">Rental and travel options for city, outstation and tour journeys.</p>
+    </header>
+    <div class="services-grid" id="servicesGrid"><!-- rendered by js/script.js --></div>
+  </div>
+</section>
+
+<!-- ============ WHY CHOOSE US ============ -->
+<section class="section why" id="why">
+  <div class="container why__inner">
+    <div class="why__head">
+      <p class="eyebrow eyebrow--dark reveal">Why Cars on Rent</p>
+      <h2 class="h2 reveal">Travel Further. Travel Better.</h2>
+      <p class="lead reveal">Simple booking, comfortable vehicles and journeys shaped around the Northeast.</p>
+    </div>
+    <ul class="why__list">
+      <li class="reveal"><span>01</span><h3>Comfortable Vehicles</h3><p>Clean, well-kept cars for long hill drives and city runs alike.</p></li>
+      <li class="reveal"><span>02</span><h3>Flexible Travel Options</h3><p>Hourly, daily, outstation or multi-day tour journeys.</p></li>
+      <li class="reveal"><span>03</span><h3>Northeast-Focused Travel</h3><p>Routes and destinations across Assam and neighbouring states.</p></li>
+      <li class="reveal"><span>04</span><h3>Easy WhatsApp Booking</h3><p>Send your trip details in one tap — no forms, no waiting.</p></li>
+      <li class="reveal"><span>05</span><h3>Personalized Assistance</h3><p>We help match the right vehicle to your plan and group size.</p></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section class="section section--soft" id="gallery">
+  <div class="container">
+    <header class="section-head">
+      <p class="eyebrow eyebrow--dark reveal">Gallery</p>
+      <h2 class="h2 reveal">Moments From the Road</h2>
+      <p class="section-head__sub reveal">Photographs from our journeys across Northeast India.</p>
+    </header>
+
+    <div class="gallery-grid" id="galleryGrid"></div>
+    <div class="gallery-empty" id="galleryEmpty" hidden>
+      <div class="gallery-empty__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="18" height="18" rx="3" ry="3"/>
+          <circle cx="8.5" cy="8.5" r="1.5"/>
+          <polyline points="21 15 16 10 5 21"/>
+        </svg>
+      </div>
+      <h3>No Photos Uploaded</h3>
+      <p>Uploaded images will be shown here.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="cta" id="cta">
+  <img class="cta__bg" src="images/site/cta.jpg" alt="Mountain highway at dusk in Northeast India" width="1920" height="900" loading="lazy" />
+  <div class="cta__veil"></div>
+  <div class="container cta__inner">
+    <h2 class="h2 h2--light reveal">Ready to Explore Northeast India?</h2>
+    <p class="reveal">Tell us where you want to go. We'll help you find the right ride for your journey.</p>
+    <div class="cta__buttons reveal">
+      <a class="btn btn--accent btn--lg js-wa" data-wa-context="cta" href="#">WhatsApp for a Quote</a>
+      <a class="btn btn--glass btn--lg" href="tel:+917086263505">Call +91 70862 63505</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section" id="contact">
+  <div class="container">
+    <header class="section-head">
+      <p class="eyebrow eyebrow--dark reveal">Contact</p>
+      <h2 class="h2 reveal">Let's Plan Your Journey</h2>
+      <p class="section-head__sub reveal">Share your trip details and we'll get back with availability and pricing.</p>
+    </header>
+
+    <div class="contact">
+      <div class="contact__info reveal">
+        <ul class="contact__list">
+          <li>
+            <span class="contact__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+            <div><strong>Address</strong><p>Sarat Chandra Singha Path, Jyotikuchi, Dhapalia, Guwahati, Assam 781014</p></div>
+          </li>
+          <li>
+            <span class="contact__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 5c0-1 1-2 2-2h1.5c.6 0 1 .4 1.2 1l.8 2.5c.2.6 0 1.2-.5 1.5l-1 .7a11 11 0 0 0 5.3 5.3l.7-1c.3-.5.9-.7 1.5-.5l2.5.8c.6.2 1 .6 1 1.2V18c0 1.1-.9 2-2 2A15 15 0 0 1 4 5Z"/></svg></span>
+            <div><strong>Phone</strong><p><a href="tel:+917086263505">+91 70862 63505</a></p></div>
+          </li>
+          <li>
+            <span class="contact__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6 8.5-6"/></svg></span>
+            <div><strong>Email</strong><p><a href="mailto:carsonrentnortheast2025@gmail.com">carsonrentnortheast2025@gmail.com</a></p></div>
+          </li>
+        </ul>
+        <a class="btn btn--primary btn--full js-wa" data-wa-context="contact-info" href="#">Message us on WhatsApp</a>
+
+        <div class="map">
+          <iframe
+            title="Cars on Rent location map, Jyotikuchi, Guwahati"
+            src="https://www.google.com/maps?q=Sarat%20Chandra%20Singha%20Path%2C%20Jyotikuchi%2C%20Dhapalia%2C%20Guwahati%2C%20Assam%20781014&output=embed"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <!-- Enquiry form → WhatsApp only, no backend -->
+      <form class="enquiry reveal" id="enquiryForm" novalidate>
+        <h3 class="enquiry__title">Send an enquiry</h3>
+        <div class="field-row">
+          <div class="field">
+            <label for="e-name">Full Name *</label>
+            <input id="e-name" name="name" type="text" autocomplete="name" required />
+          </div>
+          <div class="field">
+            <label for="e-phone">Phone Number *</label>
+            <input id="e-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required />
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="e-pickup">Pickup Location *</label>
+            <input id="e-pickup" name="pickup" type="text" required />
+          </div>
+          <div class="field">
+            <label for="e-destination">Destination *</label>
+            <input id="e-destination" name="destination" type="text" required />
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="e-date">Travel Date *</label>
+            <input id="e-date" name="date" type="date" required />
+          </div>
+          <div class="field">
+            <label for="e-vehicle">Vehicle Type *</label>
+            <select id="e-vehicle" name="vehicle" required>
+              <option value="">Select vehicle</option>
+              <option>Toyota Innova Crysta</option>
+              <option>Toyota Innova</option>
+              <option>Force Urbania</option>
+              <option>Force Tempo Traveller 17 Seater</option>
+              <option>Force Tempo Traveller 26 Seater</option>
+              <option>Maruti Suzuki Swift Dzire</option>
+              <option>Maruti Suzuki Brezza</option>
+              <option>Maruti Suzuki Fronx</option>
+              <option>Hyundai Venue</option>
+              <option>Hyundai i20</option>
+            </select>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="e-passengers">Number of Passengers</label>
+            <input id="e-passengers" name="passengers" type="number" min="1" max="30" />
+          </div>
+          <div class="field">
+            <label for="e-days">Trip Type</label>
+            <select id="e-days" name="triptype">
+              <option value="">Select</option>
+              <option>Local (within city)</option>
+              <option>Airport transfer</option>
+              <option>Outstation</option>
+              <option>Multi-day tour</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="e-message">Additional Requirements</label>
+          <textarea id="e-message" name="message" rows="3" placeholder="Timings, stops, luggage, anything else"></textarea>
+        </div>
+        <button class="btn btn--accent btn--full btn--lg" type="submit">Send Enquiry on WhatsApp</button>
+        <p class="form-note">Your enquiry will open in WhatsApp with the details you entered.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <span class="brand brand--footer">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14M3 17l1.8-5.2A3 3 0 0 1 7.6 9.7h8.8a3 3 0 0 1 2.8 2.1L21 17M6.5 17v1.5M17.5 17v1.5"/><circle cx="7.5" cy="14" r="1"/><circle cx="16.5" cy="14" r="1"/></svg>
+        </span>
+        <span class="brand__text">Cars<span>on</span>Rent</span>
+      </span>
+      <p>Premium Car Rental Services Across Northeastern States of India.</p>
+      <a class="btn btn--accent js-wa" data-wa-context="footer" href="#">WhatsApp Us</a>
+    </div>
+    <nav class="footer__col" aria-label="Quick links">
+      <h3>Quick Links</h3>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#fleet">Fleet</a>
+      <a href="#destinations">Destinations</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="footer__col">
+      <h3>Contact</h3>
+      <p>Sarat Chandra Singha Path, Jyotikuchi, Dhapalia, Guwahati, Assam 781014</p>
+      <p><a href="tel:+917086263505">+91 70862 63505</a></p>
+      <p><a href="mailto:carsonrentnortheast2025@gmail.com">carsonrentnortheast2025@gmail.com</a></p>
+    </div>
+  </div>
+  <div class="container footer__bottom">
+    <p>© 2026 Cars on Rent. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- ============ FLOATING ACTIONS ============ -->
+<div class="fabs">
+  <a class="fab fab--wa js-wa" data-wa-context="fab" href="#" aria-label="Chat on WhatsApp" data-tip="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.9.53 3.68 1.46 5.2L2 22l5.1-1.6a9.9 9.9 0 0 0 4.94 1.3c5.44 0 9.84-4.4 9.84-9.84C21.88 6.4 17.48 2 12.04 2Zm0 17.9c-1.6 0-3.1-.44-4.4-1.24l-.32-.2-3.02.95.96-2.94-.2-.33a8.02 8.02 0 0 1-1.24-4.3c0-4.44 3.6-8.05 8.06-8.05 4.45 0 8.05 3.6 8.05 8.05 0 4.45-3.6 8.06-8.05 8.06Zm4.5-5.9c-.24-.12-1.44-.72-1.66-.8-.22-.09-.38-.13-.55.12-.16.24-.63.8-.77.96-.14.16-.28.18-.52.06a6.5 6.5 0 0 1-1.92-1.2 7.3 7.3 0 0 1-1.32-1.66c-.14-.24 0-.38.1-.52.12-.13.4-.46.5-.62.1-.16.06-.3-.02-.44-.08-.14-.55-1.34-.76-1.82-.2-.48-.4-.42-.55-.42h-.47c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2 0 1.18.86 2.32.98 2.48.12.16 1.68 2.68 4.1 3.66 2.42.98 2.42.66 2.86.62.44-.04 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg>
+  </a>
+  <a class="fab fab--call" href="tel:+917086263505" aria-label="Call Cars on Rent" data-tip="Call +91 70862 63505">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M4 5c0-1 1-2 2-2h1.5c.6 0 1 .4 1.2 1l.8 2.5c.2.6 0 1.2-.5 1.5l-1 .7a11 11 0 0 0 5.3 5.3l.7-1c.3-.5.9-.7 1.5-.5l2.5.8c.6.2 1 .6 1 1.2V18c0 1.1-.9 2-2 2A15 15 0 0 1 4 5Z"/></svg>
+  </a>
+  <button class="fab fab--top" id="toTop" aria-label="Scroll to top" data-tip="Back to top" hidden>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+  </button>
+</div>
+
+<!-- ============ LIGHTBOX ============ -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Gallery image viewer" hidden>
+  <button class="lightbox__close" id="lbClose" aria-label="Close viewer">&times;</button>
+  <button class="lightbox__nav lightbox__nav--prev" id="lbPrev" aria-label="Previous image">&#8249;</button>
+  <img class="lightbox__img" id="lbImg" src="" alt="" />
+  <button class="lightbox__nav lightbox__nav--next" id="lbNext" aria-label="Next image">&#8250;</button>
+  <p class="lightbox__count" id="lbCount"></p>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/script.js" defer></script>
+</body>
+</html>
