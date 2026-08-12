@@ -25,16 +25,16 @@ const openWhatsApp = (message) => {
    2. FLEET DATA — categories are editable placeholder content
    --------------------------------------------------------- */
 const FLEET = [
-  { tag: "7 Seater MPV", name: "Toyota Innova Crysta", desc: "Premium comfort for families and long Northeast drives.", img: "images/fleet/innova-crysta.jpg" },
-  { tag: "7 Seater MPV", name: "Toyota Innova", desc: "Dependable and spacious for group and outstation travel.", img: "images/fleet/innova.jpg" },
-  { tag: "Luxury Van", name: "Force Urbania", desc: "Premium van travel with reclining seats and ample luggage space.", img: "images/fleet/urbania.jpg" },
-  { tag: "17 Seater", name: "Force Tempo Traveller 17 Seater", desc: "Ideal for larger families and group tours across the Northeast.", img: "images/fleet/traveller-17.jpg" },
-  { tag: "26 Seater", name: "Force Tempo Traveller 26 Seater", desc: "Big-group travel for tours, events and corporate trips.", img: "images/fleet/traveller-26.jpg" },
-  { tag: "Sedan", name: "Maruti Suzuki Swift Dzire", desc: "Economical sedan for city runs and airport transfers.", img: "images/fleet/dzire.jpg" },
-  { tag: "Compact SUV", name: "Maruti Suzuki Brezza", desc: "Comfortable compact SUV for hill roads and highways.", img: "images/fleet/brezza.jpg" },
-  { tag: "Compact SUV", name: "Maruti Suzuki Fronx", desc: "Stylish, fuel-efficient ride for small groups.", img: "images/fleet/fronx.jpg" },
-  { tag: "Compact SUV", name: "Hyundai Venue", desc: "Feature-rich SUV for city travel and short getaways.", img: "images/fleet/venue.jpg" },
-  { tag: "Hatchback", name: "Hyundai i20", desc: "Smart, easy-going hatchback for local Guwahati travel.", img: "images/fleet/i20.jpg" },
+  { tag: "7 Seater MPV", name: "Toyota Innova Crysta", desc: "Premium comfort for families and long Northeast drives.", img: "images/fleet/innova-crysta.jpg", specs: ["7 seats", "AC", "Outstation"] },
+  { tag: "7 Seater MPV", name: "Toyota Innova", desc: "Dependable and spacious for group and outstation travel.", img: "images/fleet/innova.jpg", specs: ["7 seats", "Luggage", "Tours"] },
+  { tag: "Luxury Van", name: "Force Urbania", desc: "Premium van travel with reclining seats and ample luggage space.", img: "images/fleet/urbania.jpg", specs: ["Luxury van", "Recliner", "Groups"] },
+  { tag: "17 Seater", name: "Force Tempo Traveller 17 Seater", desc: "Ideal for larger families and group tours across the Northeast.", img: "images/fleet/traveller-17.jpg", specs: ["17 seats", "Group tours", "AC"] },
+  { tag: "26 Seater", name: "Force Tempo Traveller 26 Seater", desc: "Big-group travel for tours, events and corporate trips.", img: "images/fleet/traveller-26.jpg", specs: ["26 seats", "Events", "Corporate"] },
+  { tag: "Sedan", name: "Maruti Suzuki Swift Dzire", desc: "Economical sedan for city runs and airport transfers.", img: "images/fleet/dzire.jpg", specs: ["Sedan", "Airport", "City"] },
+  { tag: "Compact SUV", name: "Maruti Suzuki Brezza", desc: "Comfortable compact SUV for hill roads and highways.", img: "images/fleet/brezza.jpg", specs: ["SUV", "Hill roads", "AC"] },
+  { tag: "Compact SUV", name: "Maruti Suzuki Fronx", desc: "Stylish, fuel-efficient ride for small groups.", img: "images/fleet/fronx.jpg", specs: ["SUV", "Efficient", "Small group"] },
+  { tag: "Compact SUV", name: "Hyundai Venue", desc: "Feature-rich SUV for city travel and short getaways.", img: "images/fleet/venue.jpg", specs: ["SUV", "Getaways", "Comfort"] },
+  { tag: "Hatchback", name: "Hyundai i20", desc: "Smart, easy-going hatchback for local Guwahati travel.", img: "images/fleet/i20.jpg", specs: ["Hatchback", "Local", "Easy ride"] },
 ];
 
 /* ---------------------------------------------------------
@@ -97,7 +97,10 @@ function renderFleet() {
         <span class="vcard__tag">${v.tag}</span>
         <h3>${v.name}</h3>
         <p>${v.desc}</p>
-        <button class="btn btn--primary js-fleet-wa" type="button" data-vehicle="${v.name}">Enquire on WhatsApp</button>
+        <ul class="vcard__specs" aria-label="${v.name} highlights">
+          ${v.specs.map((spec) => `<li>${spec}</li>`).join("")}
+        </ul>
+        <button class="btn btn--fleet-wa js-fleet-wa" type="button" data-vehicle="${v.name}">Enquire on WhatsApp</button>
       </div>
     </article>`
   ).join("");
