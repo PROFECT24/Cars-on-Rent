@@ -25,16 +25,116 @@ const openWhatsApp = (message) => {
    2. FLEET DATA — categories are editable placeholder content
    --------------------------------------------------------- */
 const FLEET = [
-  { tag: "7 Seater MPV", name: "Toyota Innova Crysta", desc: "Premium comfort for families and long Northeast drives.", img: "images/fleet/innova-crysta.jpg", specs: ["7 seats", "AC", "Outstation"] },
-  { tag: "7 Seater MPV", name: "Toyota Innova", desc: "Dependable and spacious for group and outstation travel.", img: "images/fleet/innova.jpg", specs: ["7 seats", "Luggage", "Tours"] },
-  { tag: "Luxury Van", name: "Force Urbania", desc: "Premium van travel with reclining seats and ample luggage space.", img: "images/fleet/urbania.jpg", specs: ["Luxury van", "Recliner", "Groups"] },
-  { tag: "17 Seater", name: "Force Tempo Traveller 17 Seater", desc: "Ideal for larger families and group tours across the Northeast.", img: "images/fleet/traveller-17.jpg", specs: ["17 seats", "Group tours", "AC"] },
-  { tag: "26 Seater", name: "Force Tempo Traveller 26 Seater", desc: "Big-group travel for tours, events and corporate trips.", img: "images/fleet/traveller-26.jpg", specs: ["26 seats", "Events", "Corporate"] },
-  { tag: "Sedan", name: "Maruti Suzuki Swift Dzire", desc: "Economical sedan for city runs and airport transfers.", img: "images/fleet/dzire.jpg", specs: ["Sedan", "Airport", "City"] },
-  { tag: "Compact SUV", name: "Maruti Suzuki Brezza", desc: "Comfortable compact SUV for hill roads and highways.", img: "images/fleet/brezza.jpg", specs: ["SUV", "Hill roads", "AC"] },
-  { tag: "Compact SUV", name: "Maruti Suzuki Fronx", desc: "Stylish, fuel-efficient ride for small groups.", img: "images/fleet/fronx.jpg", specs: ["SUV", "Efficient", "Small group"] },
-  { tag: "Compact SUV", name: "Hyundai Venue", desc: "Feature-rich SUV for city travel and short getaways.", img: "images/fleet/venue.jpg", specs: ["SUV", "Getaways", "Comfort"] },
-  { tag: "Hatchback", name: "Hyundai i20", desc: "Smart, easy-going hatchback for local Guwahati travel.", img: "images/fleet/i20.jpg", specs: ["Hatchback", "Local", "Easy ride"] },
+  {
+    tag: "Road King",
+    name: "Toyota Innova Crysta",
+    img: "images/fleet/innova-crysta.jpg",
+    features: [
+      { icon: "mountain", text: "Best choice for long Northeast trips" },
+      { icon: "check", text: "7-seater comfort with huge boot" },
+      { icon: "users", text: "Excellent for family journeys" },
+      { icon: "shield", text: "Smooth suspension on hill roads" },
+    ],
+  },
+  {
+    tag: "Family MUV",
+    name: "Toyota Innova",
+    img: "images/fleet/innova.jpg",
+    features: [
+      { icon: "mountain", text: "Reliable for outstation travel" },
+      { icon: "check", text: "Spacious seating for groups" },
+      { icon: "users", text: "Great for families and luggage" },
+      { icon: "shield", text: "Dependable long-route comfort" },
+    ],
+  },
+  {
+    tag: "Luxury Van",
+    name: "Force Urbania",
+    img: "images/fleet/urbania.jpg",
+    features: [
+      { icon: "mountain", text: "Premium ride for group tours" },
+      { icon: "check", text: "Reclining seats and roomy cabin" },
+      { icon: "users", text: "Ideal for teams and families" },
+      { icon: "shield", text: "Comfortable for longer journeys" },
+    ],
+  },
+  {
+    tag: "Group Traveller",
+    name: "Force Tempo Traveller 17 Seater",
+    img: "images/fleet/traveller-17.jpg",
+    features: [
+      { icon: "mountain", text: "Built for Northeast group trips" },
+      { icon: "check", text: "17-seat capacity with AC" },
+      { icon: "users", text: "Great for large families" },
+      { icon: "shield", text: "Practical for tours and events" },
+    ],
+  },
+  {
+    tag: "Big Group",
+    name: "Force Tempo Traveller 26 Seater",
+    img: "images/fleet/traveller-26.jpg",
+    features: [
+      { icon: "mountain", text: "Ready for big tour groups" },
+      { icon: "check", text: "26 seats for events and trips" },
+      { icon: "users", text: "Comfortable group movement" },
+      { icon: "shield", text: "Suitable for corporate travel" },
+    ],
+  },
+  {
+    tag: "City Sedan",
+    name: "Maruti Suzuki Swift Dzire",
+    img: "images/fleet/dzire.jpg",
+    features: [
+      { icon: "mountain", text: "Smooth for city and highway runs" },
+      { icon: "check", text: "Economical airport transfers" },
+      { icon: "users", text: "Comfortable for small families" },
+      { icon: "shield", text: "Easy ride for local travel" },
+    ],
+  },
+  {
+    tag: "Compact SUV",
+    name: "Maruti Suzuki Brezza",
+    img: "images/fleet/brezza.jpg",
+    features: [
+      { icon: "mountain", text: "Confident on hill roads" },
+      { icon: "check", text: "Compact SUV with good comfort" },
+      { icon: "users", text: "Great for weekend getaways" },
+      { icon: "shield", text: "High seating and steady drive" },
+    ],
+  },
+  {
+    tag: "Hill Ready",
+    name: "Maruti Suzuki Fronx",
+    img: "images/fleet/fronx.jpg",
+    features: [
+      { icon: "mountain", text: "SUV stance with stylish looks" },
+      { icon: "check", text: "Efficient for hill climbs" },
+      { icon: "users", text: "Practical boot for short trips" },
+      { icon: "shield", text: "Peppy ride for small groups" },
+    ],
+  },
+  {
+    tag: "Sporty SUV",
+    name: "Hyundai Venue",
+    img: "images/fleet/venue.jpg",
+    features: [
+      { icon: "mountain", text: "Perfect for short getaways" },
+      { icon: "check", text: "Feature-rich compact SUV" },
+      { icon: "users", text: "Comfortable for city travel" },
+      { icon: "shield", text: "High ground clearance feel" },
+    ],
+  },
+  {
+    tag: "Highway Hatch",
+    name: "Hyundai i20",
+    img: "images/fleet/i20.jpg",
+    features: [
+      { icon: "mountain", text: "Premium hatchback comfort" },
+      { icon: "check", text: "Smooth on Meghalaya roads" },
+      { icon: "users", text: "Good for 4 passengers" },
+      { icon: "shield", text: "Easy for city and highway" },
+    ],
+  },
 ];
 
 /* ---------------------------------------------------------
@@ -84,6 +184,13 @@ const galleryImages = [];
 const svg = (paths) =>
   `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${paths}</svg>`;
 
+const FLEET_ICONS = {
+  mountain: '<path d="M3 19l6-10 4 6 2-3 6 7Z"/>',
+  check: '<circle cx="12" cy="12" r="8"/><path d="m9 12 2 2 4-4"/>',
+  users: '<circle cx="9" cy="9" r="3"/><path d="M3 20c0-3 2.7-5 6-5s6 2 6 5"/><path d="M17 10a2.5 2.5 0 0 1 0 5"/><path d="M20 20c0-2-.7-3.4-2-4.2"/>',
+  shield: '<path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6l7-3Z"/><path d="m9 12 2 2 4-4"/>',
+};
+
 function renderFleet() {
   const grid = document.getElementById("fleetGrid");
   if (!grid) return;
@@ -91,14 +198,20 @@ function renderFleet() {
     (v) => `
     <article class="vcard reveal">
       <div class="vcard__media">
+        <span class="vcard__tag">${v.tag}</span>
         <img src="${v.img}" alt="${v.name} available for rent" loading="lazy" width="1024" height="768" />
       </div>
       <div class="vcard__body">
-        <span class="vcard__tag">${v.tag}</span>
-        <h3>${v.name}</h3>
-        <p>${v.desc}</p>
-        <ul class="vcard__specs" aria-label="${v.name} highlights">
-          ${v.specs.map((spec) => `<li>${spec}</li>`).join("")}
+        <div class="vcard__title-row">
+          <h3>${v.name}</h3>
+          <span class="vcard__status"><span aria-hidden="true"></span>Popular</span>
+        </div>
+        <ul class="vcard__features" aria-label="${v.name} highlights">
+          ${v.features
+            .map(
+              (feature) => `<li><span class="vcard__feature-icon">${svg(FLEET_ICONS[feature.icon])}</span><span>${feature.text}</span></li>`
+            )
+            .join("")}
         </ul>
         <button class="btn btn--fleet-wa js-fleet-wa" type="button" data-vehicle="${v.name}">Enquire on WhatsApp</button>
       </div>
