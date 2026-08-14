@@ -141,9 +141,7 @@ p:not(.eyebrow):not(.lead) { color: var(--ink-soft); }
   display: grid;
   place-items: center;
   width: 38px; height: 38px;
-  border-radius: 50%;
   overflow: hidden;
-  background: #fff;
 }
 .brand__mark img {
   display: block;
