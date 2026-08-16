@@ -28,7 +28,7 @@ const FLEET = [
   {
     tag: "Road King",
     name: "Toyota Innova Crysta",
-    img: "images/fleet/innova-crysta.jpg",
+    img: "images/fleet/innova-crysta.jpeg",
     features: [
       { icon: "mountain", text: "Best choice for long Northeast trips" },
       { icon: "check", text: "7-seater comfort with huge boot" },
@@ -36,21 +36,21 @@ const FLEET = [
       { icon: "shield", text: "Smooth suspension on hill roads" },
     ],
   },
-  {
-    tag: "Family MUV",
-    name: "Toyota Innova",
-    img: "images/fleet/innova.jpg",
-    features: [
-      { icon: "mountain", text: "Reliable for outstation travel" },
-      { icon: "check", text: "Spacious seating for groups" },
-      { icon: "users", text: "Great for families and luggage" },
-      { icon: "shield", text: "Dependable long-route comfort" },
-    ],
-  },
+  // {
+  //   tag: "Family MUV",
+  //   name: "Toyota Innova",
+  //   img: "images/fleet/innova.jpg",
+  //   features: [
+  //     { icon: "mountain", text: "Reliable for outstation travel" },
+  //     { icon: "check", text: "Spacious seating for groups" },
+  //     { icon: "users", text: "Great for families and luggage" },
+  //     { icon: "shield", text: "Dependable long-route comfort" },
+  //   ],
+  // },
   {
     tag: "Luxury Van",
     name: "Force Urbania",
-    img: "images/fleet/urbania.jpg",
+    img: "images/fleet/urbania.jpeg",
     features: [
       { icon: "mountain", text: "Premium ride for group tours" },
       { icon: "check", text: "Reclining seats and roomy cabin" },
@@ -61,7 +61,7 @@ const FLEET = [
   {
     tag: "Group Traveller",
     name: "Force Tempo Traveller 17 Seater",
-    img: "images/fleet/traveller-17.jpg",
+    img: "images/fleet/traveller-17.jpeg",
     features: [
       { icon: "mountain", text: "Built for Northeast group trips" },
       { icon: "check", text: "17-seat capacity with AC" },
@@ -94,7 +94,7 @@ const FLEET = [
   {
     tag: "Compact SUV",
     name: "Maruti Suzuki Brezza",
-    img: "images/fleet/brezza.jpg",
+    img: "images/fleet/breeza.jpeg",
     features: [
       { icon: "mountain", text: "Confident on hill roads" },
       { icon: "check", text: "Compact SUV with good comfort" },
@@ -105,7 +105,7 @@ const FLEET = [
   {
     tag: "Hill Ready",
     name: "Maruti Suzuki Fronx",
-    img: "images/fleet/fronx.jpg",
+    img: "images/fleet/fronx.jpeg",
     features: [
       { icon: "mountain", text: "SUV stance with stylish looks" },
       { icon: "check", text: "Efficient for hill climbs" },
@@ -116,7 +116,7 @@ const FLEET = [
   {
     tag: "Sporty SUV",
     name: "Hyundai Venue",
-    img: "images/fleet/venue.jpg",
+    img: "images/fleet/venue.jpeg",
     features: [
       { icon: "mountain", text: "Perfect for short getaways" },
       { icon: "check", text: "Feature-rich compact SUV" },
@@ -127,7 +127,7 @@ const FLEET = [
   {
     tag: "Highway Hatch",
     name: "Hyundai i20",
-    img: "images/fleet/i20.jpg",
+    img: "images/fleet/i20.jpeg",
     features: [
       { icon: "mountain", text: "Premium hatchback comfort" },
       { icon: "check", text: "Smooth on Meghalaya roads" },
