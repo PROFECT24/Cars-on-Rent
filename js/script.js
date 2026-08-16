@@ -141,14 +141,16 @@ const FLEET = [
    3. DESTINATION DATA
    --------------------------------------------------------- */
 const DESTINATIONS = [
-  { name: "Shillong", desc: "Pine hills, lakes and easy-going hill-station days.", img: "images/site/dest-shillong.jpg" },
-  { name: "Cherrapunji / Sohra", desc: "Waterfalls, caves and cloud-wrapped viewpoints.", img: "images/site/dest-cherrapunji.jpg" },
+  { name: "Anini", desc: "Pine hills, lakes and easy-going hill-station days.", img: "images/site/dest-anini.jpeg" },
+  { name: "Shillong / Cherrapunji", desc: "Waterfalls, caves and cloud-wrapped viewpoints.", img: "images/site/dest-cherrapunji.jpg" },
   { name: "Kaziranga", desc: "Grasslands and wildlife in the heart of Assam.", img: "images/site/dest-kaziranga.jpg" },
   { name: "Tawang", desc: "High mountain passes and Himalayan monasteries.", img: "images/site/dest-tawang.jpg" },
-  { name: "Sikkim", desc: "Terraced valleys with snow peaks on the horizon.", img: "images/site/dest-sikkim.jpg" },
-  { name: "Guwahati", desc: "Riverside temples and the gateway to the Northeast.", img: "images/site/dest-guwahati.jpg" },
+  { name: "Dong Valley", desc: "India's easternmost sunrise with breathtaking mountain views.", img: "images/site/dest-dongvalley.jpg" },
+  { name: " Maa Kamakhya Temple", desc: "Riverside temples and the gateway to the Northeast.", img: "images/site/dest-kamakhya.jpg" },
   { name: "Dawki", desc: "Clear turquoise river water and quiet boat rides.", img: "images/site/dest-dawki.jpg" },
   { name: "Ziro Valley", desc: "Green paddy fields framed by gentle pine hills.", img: "images/site/dest-ziro.jpg" },
+  { name: "Manas National Park", desc: "Wild forests, river valleys and rare wildlife in Assam.", img: "images/site/dest-manas.jpeg" },
+  { name: "Mechuka", desc: "Serene valleys and stunning mountain views.", img: "images/site/dest-mechuka.jpeg" },
 ];
 
 /* ---------------------------------------------------------

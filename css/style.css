@@ -809,6 +809,23 @@ p:not(.eyebrow):not(.lead) { color: var(--ink-soft); }
 .footer__col h3 { color: #fff; font-size: .95rem; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 16px; }
 .footer__col a { display: block; padding: 5px 0; transition: color .25s, transform .25s; }
 .footer__col a:hover { color: var(--green); }
+.footer__contact-line {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 10px;
+}
+.footer__contact-line svg {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  margin-top: 3px;
+  color: rgba(255, 255, 255, .9);
+}
+.footer__contact-line a {
+  display: inline;
+  padding: 0;
+}
 .footer__col p + p { margin-top: 8px; }
 .footer__bottom {
   margin-top: 48px;
