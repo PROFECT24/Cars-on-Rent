@@ -175,7 +175,9 @@ const SERVICES = [
 /* ---------------------------------------------------------
    5. GALLERY DATA & RENDERER
    --------------------------------------------------------- */
-const GALLERY_COUNT = 20;
+const GALLERY_COUNT = 31;
+const GALLERY_INITIAL_VISIBLE = 20;
+const GALLERY_EXTENSIONS = ["jpeg", "jpg", "png", "webp"];
 const galleryImages = [];
 
 /* =========================================================
@@ -257,59 +259,90 @@ function renderGallery() {
   if (!grid) return;
 
   grid.innerHTML = "";
+  document.getElementById("galleryShowMore")?.remove();
   galleryImages.length = 0;
 
-  let loadedCount = 0;
+  let activeCount = 0;
+  let failedCount = 0;
+  const showMore = document.createElement("button");
+  showMore.id = "galleryShowMore";
+  showMore.className = "btn btn--primary gallery-more";
+  showMore.type = "button";
+  showMore.textContent = "Show More";
+  showMore.hidden = true;
 
   const updateEmptyState = () => {
-    if (empty) empty.hidden = loadedCount > 0;
-    if (grid) grid.style.display = loadedCount > 0 ? "grid" : "none";
+    const allImagesFailed = failedCount >= GALLERY_COUNT;
+    if (empty) empty.hidden = activeCount > 0 || !allImagesFailed;
+    if (grid) grid.style.display = allImagesFailed ? "none" : "grid";
+  };
+
+  const updateShowMore = () => {
+    const hasHiddenImages = galleryImages.some((item) => !item.failed && item.el.hidden);
+    showMore.hidden = activeCount === 0 || !hasHiddenImages;
   };
 
   updateEmptyState();
 
-  const loadedIndices = new Set();
-  const candidateExtensions = ["jpeg", "jpg", "png", "webp"];
+  for (let i = GALLERY_COUNT; i >= 1; i--) {
+    const card = document.createElement("button");
+    const img = document.createElement("img");
+    const zoom = document.createElement("span");
+    const item = {
+      src: `images/${i}.${GALLERY_EXTENSIONS[0]}`,
+      alt: `Cars on Rent travel photo ${i}`,
+      el: card,
+      failed: false,
+    };
+    let extIndex = 0;
 
-  for (let i = 1; i <= GALLERY_COUNT; i++) {
-    candidateExtensions.forEach((ext) => {
-      const src = `images/${i}.${ext}`;
-      const imgObj = new Image();
+    card.className = "gcard reveal is-in";
+    card.type = "button";
+    card.hidden = galleryImages.length >= GALLERY_INITIAL_VISIBLE;
+    card.setAttribute("aria-label", `Open gallery photo ${i}`);
 
-      imgObj.onload = () => {
-        if (loadedIndices.has(i)) return;
-        loadedIndices.add(i);
+    img.alt = item.alt;
+    img.loading = "lazy";
+    img.decoding = "async";
+    img.onload = () => {
+      activeCount++;
+      updateEmptyState();
+      updateShowMore();
+    };
+    img.onerror = () => {
+      extIndex++;
+      if (extIndex < GALLERY_EXTENSIONS.length) {
+        item.src = `images/${i}.${GALLERY_EXTENSIONS[extIndex]}`;
+        img.src = item.src;
+        return;
+      }
+      item.failed = true;
+      failedCount++;
+      card.remove();
+      updateEmptyState();
+      updateShowMore();
+    };
 
-        loadedCount++;
+    zoom.className = "gcard__zoom";
+    zoom.setAttribute("aria-hidden", "true");
+    zoom.innerHTML = `
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+    `;
 
-        const card = document.createElement("button");
-        card.className = "gcard reveal is-in";
-        card.type = "button";
-        card.setAttribute("aria-label", `Open gallery photo ${loadedCount}`);
-        card.innerHTML = `
-          <img src="${src}" alt="Cars on Rent travel photo ${loadedCount}" loading="lazy" decoding="async" />
-          <span class="gcard__zoom" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-          </span>
-        `;
-
-        grid.appendChild(card);
-        galleryImages.push({
-          src: src,
-          alt: `Cars on Rent travel photo ${loadedCount}`,
-          el: card,
-        });
-
-        updateEmptyState();
-      };
-
-      imgObj.onerror = () => {
-        updateEmptyState();
-      };
-
-      imgObj.src = src;
-    });
+    card.append(img, zoom);
+    grid.appendChild(card);
+    galleryImages.push(item);
+    img.src = item.src;
   }
+
+  showMore.addEventListener("click", () => {
+    galleryImages.forEach((item) => {
+      if (!item.failed) item.el.hidden = false;
+    });
+    updateShowMore();
+  });
+
+  grid.insertAdjacentElement("afterend", showMore);
 }
 
 /* =========================================================
