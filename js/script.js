@@ -72,7 +72,7 @@ const FLEET = [
   {
     tag: "Big Group",
     name: "Force Tempo Traveller 26 Seater",
-    img: "images/fleet/traveller-26.jpg",
+    img: "images/fleet/traveller-26.jpeg",
     features: [
       { icon: "mountain", text: "Ready for big tour groups" },
       { icon: "check", text: "26 seats for events and trips" },
@@ -83,7 +83,7 @@ const FLEET = [
   {
     tag: "City Sedan",
     name: "Maruti Suzuki Swift Dzire",
-    img: "images/fleet/dzire.jpg",
+    img: "images/fleet/dzire.jpeg",
     features: [
       { icon: "mountain", text: "Smooth for city and highway runs" },
       { icon: "check", text: "Economical airport transfers" },
