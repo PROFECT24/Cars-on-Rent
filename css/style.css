@@ -805,7 +805,22 @@ p:not(.eyebrow):not(.lead) { color: var(--ink-soft); }
 .footer p, .footer a { color: rgba(255, 255, 255, .72); font-size: .93rem; }
 .footer__brand .brand { color: #fff; margin-bottom: 16px; }
 .footer__brand p { max-width: 34ch; }
-.footer__brand .btn { margin-top: 20px; color: #fff; }
+.footer__socials { display: flex; gap: 10px; margin-top: 20px; }
+.footer__social {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(255, 255, 255, .2);
+  border-radius: 50%;
+  color: #fff !important;
+  transition: transform .3s var(--ease), background-color .25s, border-color .25s;
+}
+.footer__social:hover { transform: translateY(-2px); border-color: transparent; }
+.footer__social--wa:hover { background: #25d366; }
+.footer__social--facebook:hover { background: #1877f2; }
+.footer__social--instagram:hover { background: #e4405f; }
+.footer__social svg { width: 21px; height: 21px; }
 .footer__col h3 { color: #fff; font-size: .95rem; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 16px; }
 .footer__col a { display: block; padding: 5px 0; transition: color .25s, transform .25s; }
 .footer__col a:hover { color: var(--green); }
