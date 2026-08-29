@@ -147,7 +147,7 @@ const DESTINATIONS = [
   { name: "Tawang", desc: "High mountain passes and Himalayan monasteries.", img: "images/site/dest-tawang.jpg" },
   { name: "Dong Valley", desc: "India's easternmost sunrise with breathtaking mountain views.", img: "images/site/dest-dongvalley.jpg" },
   { name: " Maa Kamakhya Temple", desc: "Riverside temples and the gateway to the Northeast.", img: "images/site/dest-kamakhya.jpg" },
-  { name: "Dawki", desc: "Clear turquoise river water and quiet boat rides.", img: "images/site/dest-dawki.jpg" },
+  // { name: "Dawki", desc: "Clear turquoise river water and quiet boat rides.", img: "images/site/dest-dawki.jpg" },
   { name: "Ziro Valley", desc: "Green paddy fields framed by gentle pine hills.", img: "images/site/dest-ziro.jpg" },
   { name: "Manas National Park", desc: "Wild forests, river valleys and rare wildlife in Assam.", img: "images/site/dest-manas.jpeg" },
   { name: "Mechuka", desc: "Serene valleys and stunning mountain views.", img: "images/site/dest-mechuka.jpeg" },
