@@ -287,6 +287,8 @@ function renderGallery() {
   updateEmptyState();
 
   for (let i = GALLERY_COUNT; i >= 1; i--) {
+    if (i === 9) continue;
+
     const card = document.createElement("button");
     const img = document.createElement("img");
     const zoom = document.createElement("span");
