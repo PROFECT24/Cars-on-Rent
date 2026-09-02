@@ -513,6 +513,7 @@
       }
 
       if (hasIdentityHashToken) {
+        window.netlifyIdentity.open();
         window.netlifyIdentity.on("login", () => {
           window.location.href = "/admin/";
         });
