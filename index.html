@@ -31,6 +31,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="css/style.css" />
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
 <!-- Structured Data / JSON-LD -->
 <script type="application/ld+json">
@@ -88,6 +89,7 @@
       <a href="#about" class="nav__link">About</a>
       <a href="#fleet" class="nav__link">Fleet</a>
       <a href="#destinations" class="nav__link">Destinations</a>
+      <a href="blog.html" class="nav__link">Blog</a>
       <a href="#gallery" class="nav__link">Gallery</a>
       <a href="#contact" class="nav__link">Contact</a>
       <div class="nav__mobile-cta">
@@ -450,6 +452,7 @@
       <a href="#about">About</a>
       <a href="#fleet">Fleet</a>
       <a href="#destinations">Destinations</a>
+      <a href="blog.html">Blog</a>
       <a href="#gallery">Gallery</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -495,6 +498,15 @@
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => { document.location.href = "/admin/index.html"; });
+      }
+    });
+  }
+</script>
 <script src="js/script.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,22 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "blog"
+    create: true
+    slug: "{{id}}"
+    extension: "json"
+    format: "json"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "ID (URL Slug)", name: "id", widget: "string", hint: "Unique URL slug, e.g. guwahati-to-shillong-road-trip" }
+      - { label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", dateFormat: "YYYY-MM-DD", timeFormat: false }
+      - { label: "Cover Image", name: "image", widget: "image", required: false }
+      - { label: "Short Description", name: "description", widget: "text", hint: "Brief summary shown on blog preview cards" }
+      - { label: "Body Content", name: "body", widget: "markdown" }
