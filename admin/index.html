@@ -7,6 +7,28 @@
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.init({
+        APIUrl: "https://carsonrentnortheast.netlify.app/.netlify/identity"
+      });
+
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.location.href = "/";
+        }
+      });
+
+      window.netlifyIdentity.on("login", () => {
+        window.location.href = "/admin/";
+      });
+
+      window.netlifyIdentity.on("logout", () => {
+        window.location.href = "/";
+      });
+    }
+  </script>
+
   <!-- Decap CMS CDN -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </body>

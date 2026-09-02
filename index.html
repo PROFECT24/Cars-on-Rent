@@ -503,10 +503,28 @@
     window.netlifyIdentity.init({
       APIUrl: "https://carsonrentnortheast.netlify.app/.netlify/identity"
     });
+
+    const hasIdentityHashToken = /(?:confirmation_token|recovery_token|invite_token)=/.test(window.location.hash || "");
+
     window.netlifyIdentity.on("init", user => {
-      if (!user) {
-        window.netlifyIdentity.on("login", () => { document.location.href = "/admin/index.html"; });
+      if (user) {
+        window.location.href = "/admin/";
+        return;
       }
+
+      if (hasIdentityHashToken) {
+        window.netlifyIdentity.on("login", () => {
+          window.location.href = "/admin/";
+        });
+      }
+    });
+
+    window.netlifyIdentity.on("login", () => {
+      window.location.href = "/admin/";
+    });
+
+    window.netlifyIdentity.on("logout", () => {
+      window.location.href = "/";
     });
   }
 </script>
