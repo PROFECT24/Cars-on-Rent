@@ -162,6 +162,26 @@
 
 <script src="js/script.js" defer></script>
 <script>
+  async function loadPostJson(postId) {
+    const targetFile = postId.endsWith(".json") ? postId : `${postId}.json`;
+
+    try {
+      const res = await fetch(`blog/${targetFile}`, { cache: "no-store" });
+      if (res.ok) return await res.json();
+    } catch (err) {
+      console.warn(`Local fetch failed for blog/${targetFile}:`, err);
+    }
+
+    try {
+      const rawRes = await fetch(`https://raw.githubusercontent.com/PROFECT24/Cars-on-Rent/main/blog/${targetFile}`, { cache: "no-store" });
+      if (rawRes.ok) return await rawRes.json();
+    } catch (err) {
+      console.warn(`GitHub fallback failed for blog/${targetFile}:`, err);
+    }
+
+    return null;
+  }
+
   document.addEventListener("DOMContentLoaded", async () => {
     const urlParams = new URLSearchParams(window.location.search);
     const postId = urlParams.get("id");
@@ -181,17 +201,11 @@
     }
 
     try {
-      // Fetch post JSON file by ID
-      const targetFile = postId.endsWith(".json") ? postId : `${postId}.json`;
-      const res = await fetch(`blog/${targetFile}`);
-
-      if (!res.ok) {
-        throw new Error(`Article not found (${res.status})`);
+      const post = await loadPostJson(postId);
+      if (!post) {
+        throw new Error(`Article not found (${postId})`);
       }
 
-      const post = await res.json();
-
-      // Update page title & meta
       document.title = `${post.title || "Article"} | Cars on Rent`;
       titleEl.textContent = post.title || "Untitled Article";
 
@@ -217,7 +231,6 @@
         coverEl.style.display = "block";
       }
 
-      // Render Markdown content using marked.js or fallback to line breaks
       if (post.body) {
         if (typeof window.marked !== "undefined" && typeof window.marked.parse === "function") {
           contentEl.innerHTML = window.marked.parse(post.body);

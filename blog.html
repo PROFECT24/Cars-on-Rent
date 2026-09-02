@@ -147,47 +147,85 @@
 
 <script src="js/script.js" defer></script>
 <script>
-  // Dynamic Blog Listing Loader
-  document.addEventListener("DOMContentLoaded", async () => {
-    const container = document.getElementById("blog-list-container");
-    
-    // List of blog posts to fetch (tries static manifest first, then falls back to known sample posts)
-    let postFiles = ["sample-post.json", "guwahati-to-kaziranga-travel-guide.json"];
-    
+  const normalizeFiles = (value) => {
+    if (!Array.isArray(value)) return [];
+    const seen = new Set();
+    const files = [];
+
+    for (const item of value) {
+      const fileName = typeof item === "string" ? item : (item.name || item.path || "");
+      if (!fileName || !fileName.endsWith(".json") || fileName === "index.json") continue;
+      if (!seen.has(fileName)) {
+        seen.add(fileName);
+        files.push(fileName);
+      }
+    }
+
+    return files;
+  };
+
+  async function getBlogFileList() {
+    const fallbackFiles = ["sample-post.json", "guwahati-to-kaziranga-travel-guide.json"];
+
     try {
-      // Step 1: Try fetching index manifest
-      const manifestRes = await fetch("blog/index.json");
+      const manifestRes = await fetch("blog/index.json", { cache: "no-store" });
       if (manifestRes.ok) {
         const manifestData = await manifestRes.json();
-        if (Array.isArray(manifestData) && manifestData.length > 0) {
-          postFiles = manifestData;
-        }
+        const files = normalizeFiles(manifestData);
+        if (files.length > 0) return files;
       }
     } catch (e) {
       console.log("Using default file list fallback:", e);
     }
 
-    // Step 2: Fetch contents for each post
-    const posts = [];
-    for (const file of postFiles) {
-      const fileName = typeof file === "string" ? file : (file.name || file.path);
-      if (!fileName || !fileName.endsWith(".json") || fileName === "index.json") continue;
-      
-      try {
-        const res = await fetch(`blog/${fileName}`);
-        if (res.ok) {
-          const postData = await res.json();
-          posts.push(postData);
-        }
-      } catch (err) {
-        console.warn(`Could not load blog post blog/${fileName}:`, err);
+    try {
+      const repoRes = await fetch("https://api.github.com/repos/PROFECT24/Cars-on-Rent/contents/blog?ref=main", {
+        cache: "no-store",
+        headers: { Accept: "application/vnd.github+json" },
+      });
+      if (repoRes.ok) {
+        const repoItems = await repoRes.json();
+        const files = normalizeFiles(repoItems);
+        if (files.length > 0) return files;
       }
+    } catch (err) {
+      console.warn("Could not fetch blog index from GitHub API:", err);
     }
 
-    // Sort posts by date (newest first)
+    return fallbackFiles;
+  }
+
+  async function loadBlogPost(fileName) {
+    try {
+      const res = await fetch(`blog/${fileName}`, { cache: "no-store" });
+      if (res.ok) return await res.json();
+    } catch (err) {
+      console.warn(`Local fetch failed for blog/${fileName}:`, err);
+    }
+
+    try {
+      const rawRes = await fetch(`https://raw.githubusercontent.com/PROFECT24/Cars-on-Rent/main/blog/${fileName}`, { cache: "no-store" });
+      if (rawRes.ok) return await rawRes.json();
+    } catch (err) {
+      console.warn(`GitHub fallback failed for blog/${fileName}:`, err);
+    }
+
+    return null;
+  }
+
+  document.addEventListener("DOMContentLoaded", async () => {
+    const container = document.getElementById("blog-list-container");
+    const postFiles = await getBlogFileList();
+    const posts = [];
+
+    for (const fileName of postFiles) {
+      if (!fileName || !fileName.endsWith(".json") || fileName === "index.json") continue;
+      const postData = await loadBlogPost(fileName);
+      if (postData) posts.push(postData);
+    }
+
     posts.sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0));
 
-    // Render cards
     if (posts.length === 0) {
       container.innerHTML = `
         <div style="grid-column: 1 / -1; text-align: center; padding: 60px 20px; background: var(--soft); border-radius: var(--radius);">
@@ -202,7 +240,7 @@
       const postId = post.id || (post.title ? post.title.toLowerCase().replace(/[^a-z0-9]+/g, "-") : "post");
       const postImage = post.image || "images/site/hero.jpg";
       const postDate = post.date ? new Date(post.date).toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" }) : "";
-      
+
       return `
         <article class="blog-card">
           <div class="blog-card__media">
